@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+package game_service_config;
+
+option go_package = "./proto;game_service_config";
+
+// 请求参数
+message GameServiceConfigRequest{
+    int32 game_id = 1;
+    int32 game_area_id = 2;
+    string game_sign = 3;
+    string value = 4;
+    int32 game_dispatch_id = 5;
+    int32 op_type = 6;
+}
+
+// 响应参数
+message GameServiceConfigResponse{
+    bool result = 1;
+}
+
+// 定义服务
+service NotifyService{
+    rpc Notify(GameServiceConfigRequest) returns (GameServiceConfigResponse);
+}
