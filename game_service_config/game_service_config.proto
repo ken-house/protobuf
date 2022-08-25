@@ -20,6 +20,6 @@ message GameServiceConfigResponse{
 }
 
 // 定义服务
-service NotifyService{
-    rpc Notify(GameServiceConfigRequest) returns (GameServiceConfigResponse);
+service GameServiceConfigService{
+    rpc GameServiceConfigNotify(GameServiceConfigRequest) returns (GameServiceConfigResponse);
 }
